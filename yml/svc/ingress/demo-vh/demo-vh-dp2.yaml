@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: demo-vh-dp2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: demo-vh-dp2
+  template:
+    metadata:
+      labels:
+        name: demo-vh-dp2
+    spec:
+      containers:
+        - name: myapp2
+          image: wangyanglinux/myapp:v2
+          imagePullPolicy: IfNotPresent
